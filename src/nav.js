@@ -38,7 +38,7 @@ export const navigation = [
       { label: 'Avatar',  path: '/components/avatar' },
       { label: 'Badge',   path: '/components/badge' },
       { label: 'Card',    path: '/components/card' },
-      { label: 'Tab',     path: '/components/tab' },
+      { label: 'Tabs',    path: '/components/tabs' },
       { label: 'Tooltip', path: '/components/tooltip' },
     ],
   },

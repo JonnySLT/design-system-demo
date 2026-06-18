@@ -1,0 +1,59 @@
+.select-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.select-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-default);
+  font-family: var(--font-sans);
+}
+
+.select-required { color: var(--color-error-text); }
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-control {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 40px;
+  padding: 0 40px 0 var(--spacing-lg);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-family: var(--font-sans);
+  color: var(--color-text-default);
+  background: var(--color-bg-default);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.select-control:focus {
+  border-color: var(--color-interactive-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.select-chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-muted);
+  display: flex;
+}
+.select-chevron svg { width: 16px; height: 16px; }
+
+.select-hint { font-size: 12px; color: var(--color-text-muted); }
+
+.select-field--error .select-control { border-color: var(--color-error-border); }
+.select-field--error .select-hint { color: var(--color-error-text); }
+.select-field--disabled .select-control { background: var(--color-bg-subtle); cursor: not-allowed; color: var(--color-text-disabled); }
+.select-field--disabled .select-label { color: var(--color-text-disabled); }

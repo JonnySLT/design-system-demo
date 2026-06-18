@@ -11,6 +11,18 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      window.onerror = function(msg, src, line, col, err) {
+        document.getElementById('root').innerHTML =
+          '<pre style="padding:32px;font-family:monospace;color:red;white-space:pre-wrap">' +
+          'JS Error: ' + msg + '\n' + (err && err.stack ? err.stack : '') + '</pre>';
+      };
+      window.addEventListener('unhandledrejection', function(e) {
+        document.getElementById('root').innerHTML =
+          '<pre style="padding:32px;font-family:monospace;color:red;white-space:pre-wrap">' +
+          'Unhandled rejection: ' + e.reason + '</pre>';
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
