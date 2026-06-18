@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import CodeBlock from './CodeBlock.jsx'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export default function ComponentDemo({ preview, code, centered = false }) {
   const [tab, setTab] = useState('preview')
@@ -35,8 +36,6 @@ export default function ComponentDemo({ preview, code, centered = false }) {
 
 function SyntaxHighlighterInline({ code }) {
   const [copied, setCopied] = useState(false)
-  const { Prism: SyntaxHighlighter } = require('react-syntax-highlighter')
-  const { vscDarkPlus } = require('react-syntax-highlighter/dist/esm/styles/prism')
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code).then(() => {
