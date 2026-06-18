@@ -1,0 +1,78 @@
+.ds-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--alert-gap);
+  padding: var(--alert-padding-y) var(--alert-padding-x);
+  border-radius: var(--alert-radius);
+  border-width: 1px;
+  border-style: solid;
+  max-width: 480px;
+}
+
+.ds-alert-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+}
+
+.ds-alert-content { flex: 1; min-width: 0; }
+
+.ds-alert-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.4;
+}
+
+.ds-alert-description {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+.ds-alert-dismiss {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+.ds-alert-dismiss:hover { opacity: 1; }
+
+/* Types */
+.ds-alert--info {
+  background: var(--color-info-bg);
+  border-color: var(--color-info-border);
+  color: var(--color-info-text);
+}
+.ds-alert--info .ds-alert-icon { color: var(--color-info-icon); }
+.ds-alert--info .ds-alert-title { color: var(--color-text-default); }
+.ds-alert--info .ds-alert-description { color: var(--color-text-muted); }
+
+.ds-alert--success {
+  background: var(--color-success-bg);
+  border-color: var(--color-success-border);
+}
+.ds-alert--success .ds-alert-icon { color: var(--color-success-icon); }
+.ds-alert--success .ds-alert-title { color: var(--color-text-default); }
+.ds-alert--success .ds-alert-description { color: var(--color-text-muted); }
+
+.ds-alert--warning {
+  background: var(--color-warning-bg);
+  border-color: var(--color-warning-border);
+}
+.ds-alert--warning .ds-alert-icon { color: var(--color-warning-icon); }
+.ds-alert--warning .ds-alert-title { color: var(--color-text-default); }
+.ds-alert--warning .ds-alert-description { color: var(--color-text-muted); }
+
+.ds-alert--error {
+  background: var(--color-error-bg);
+  border-color: var(--color-error-border);
+}
+.ds-alert--error .ds-alert-icon { color: var(--color-error-icon); }
+.ds-alert--error .ds-alert-title { color: var(--color-text-default); }
+.ds-alert--error .ds-alert-description { color: var(--color-text-muted); }

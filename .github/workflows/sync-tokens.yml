@@ -1,0 +1,50 @@
+name: Sync Figma Tokens
+
+on:
+  # Manual trigger from GitHub UI
+  workflow_dispatch:
+  # Scheduled: run every Monday at 9 AM UTC
+  schedule:
+    - cron: '0 9 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync tokens from Figma
+        run: npm run tokens
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet src/tokens/tokens.css && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Create pull request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: sync design tokens from Figma'
+          title: 'chore: sync design tokens from Figma'
+          body: |
+            Automated token sync from Figma.
+
+            Review the diff to ensure no unintended token changes before merging.
+          branch: chore/sync-tokens
+          delete-branch: true
