@@ -21,9 +21,9 @@
 }
 
 .checkbox-box {
-  width: 16px;
-  height: 16px;
-  border: 1.5px solid var(--color-border-strong);
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--color-border-default);
   border-radius: var(--radius-sm);
   background: var(--color-bg-default);
   display: flex;
@@ -67,6 +67,13 @@
 .checkbox-field--disabled .checkbox-box {
   background: var(--color-bg-subtle);
   border-color: var(--color-border-default);
+  opacity: 0.5;
+}
+.checkbox-field--disabled .checkbox-input:checked ~ .checkbox-box,
+.checkbox-field--disabled .checkbox-input:indeterminate ~ .checkbox-box {
+  background: var(--color-bg-subtle);
+  border-color: var(--color-border-default);
+  color: var(--color-text-disabled);
 }
 .checkbox-field--disabled .checkbox-text {
   color: var(--color-text-disabled);
