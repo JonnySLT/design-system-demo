@@ -1,4 +1,4 @@
-// Auto-generated from the Acme Corp DS Figma Icon page (njWLlZEF7ekubL8zrsegQ3).
+// Auto-generated from the Claude Design System Figma Icon page (njWLlZEF7ekubL8zrsegQ3).
 // Each icon's `fill` is set to `currentColor` so icons inherit text color.
 // Sorted alphabetically by slug.
 

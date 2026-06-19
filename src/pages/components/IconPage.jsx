@@ -29,7 +29,7 @@ export default function IconPage() {
       <h1 className="page-title">Icons</h1>
       <p className="page-description">
         The complete icon set — {icons.length} icons, exported directly from the
-        Acme Corp DS Figma library. Each icon is a 20&times;20 SVG that inherits
+        Claude Design System Figma library. Each icon is a 20&times;20 SVG that inherits
         the current text color via <code style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>currentColor</code>.
         Search by name, then click an icon to copy its slug.
       </p>
