@@ -7,13 +7,13 @@ const code = `<Navbar
   brand={{ initial: 'A', name: 'Acme Corp' }}
   sections={[
     { items: [
-      { label: 'Dashboard', icon: '📊', active: true },
-      { label: 'Projects',  icon: '📁' },
-      { label: 'Messages',  icon: '💬', badge: 3 },
+      { label: 'Dashboard', icon: 'house', active: true },
+      { label: 'Projects',  icon: 'notebook' },
+      { label: 'Messages',  icon: 'envelope', badge: 3 },
     ]},
     { label: 'Settings', items: [
-      { label: 'Profile', icon: '👤' },
-      { label: 'Billing', icon: '💳' },
+      { label: 'Profile', icon: 'user' },
+      { label: 'Billing', icon: 'dollar-sign' },
     ]},
   ]}
   user={{ initials: 'JS', name: 'John Smith', email: 'john@example.com' }}
@@ -32,6 +32,8 @@ export default function NavbarPage() {
       <p className="page-description">
         A full vertical sidebar — brand, grouped navigation sections, and a user row pinned to the
         bottom. Composes <code style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>NavItem</code> for each link.
+        Pass an icon slug (e.g. <code style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>"house"</code>) to show
+        an icon; omit it for a text-only item.
       </p>
 
       <h2 className="section-title">Example</h2>
@@ -41,15 +43,15 @@ export default function NavbarPage() {
             brand={{ initial: 'A', name: 'Acme Corp' }}
             sections={[
               { items: [
-                { label: 'Dashboard', icon: '📊', active: true },
-                { label: 'Projects',  icon: '📁', onClick: () => {} },
-                { label: 'Messages',  icon: '💬', badge: 3, onClick: () => {} },
-                { label: 'Files',     icon: '📄', onClick: () => {} },
+                { label: 'Dashboard', icon: 'house',    active: true },
+                { label: 'Projects',  icon: 'notebook', onClick: () => {} },
+                { label: 'Messages',  icon: 'envelope', badge: 3, onClick: () => {} },
+                { label: 'Files',     icon: 'file',     onClick: () => {} },
               ]},
               { label: 'Settings', items: [
-                { label: 'Profile',  icon: '👤', onClick: () => {} },
-                { label: 'Security', icon: '🔒', onClick: () => {} },
-                { label: 'Billing',  icon: '💳', onClick: () => {} },
+                { label: 'Profile',  icon: 'user',         onClick: () => {} },
+                { label: 'Security', icon: 'shield-check',  onClick: () => {} },
+                { label: 'Billing',  icon: 'dollar-sign',   onClick: () => {} },
               ]},
             ]}
             user={{ initials: 'JS', name: 'John Smith', email: 'john@example.com' }}
@@ -68,8 +70,8 @@ export default function NavbarPage() {
           'Keep primary nav at the top and the user/account row at the bottom.',
         ]}
         donts={[
-          'Don’t overload it — keep each group focused (≈5–7 destinations).',
-          'Don’t bury the active state; where the user is should be obvious.',
+          'Don\'t overload it — keep each group focused (≈5–7 destinations).',
+          'Don\'t bury the active state; where the user is should be obvious.',
         ]}
       />
 

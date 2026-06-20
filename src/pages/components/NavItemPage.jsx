@@ -10,14 +10,14 @@ const basicCode = `<NavItem label="Dashboard" active />
 const withBadgeCode = `<NavItem label="Inbox" badge={4} />
 <NavItem label="Notifications" badge={12} />`
 
-const iconsCode = `<NavItem icon="📊" label="Analytics" active />
-<NavItem icon="👥" label="Team" />
-<NavItem icon="⚙️" label="Settings" disabled />`
+const iconsCode = `<NavItem icon="house" label="Dashboard" active />
+<NavItem icon="people-line" label="Team" />
+<NavItem icon="gear" label="Settings" disabled />`
 
 const props = [
   { prop: 'label',    type: 'string',    default: '—',     description: 'Nav item text' },
+  { prop: 'icon',     type: 'string',    default: 'null',  description: 'Icon slug from the icon library (e.g. "house", "gear")' },
   { prop: 'active',   type: 'boolean',   default: 'false', description: 'Highlights the active/current item' },
-  { prop: 'icon',     type: 'ReactNode', default: '—',     description: 'Icon shown to the left of the label' },
   { prop: 'badge',    type: 'number',    default: '—',     description: 'Count badge shown on the right' },
   { prop: 'disabled', type: 'boolean',   default: 'false', description: 'Prevents interaction' },
   { prop: 'href',     type: 'string',    default: '—',     description: 'Renders as an anchor tag when provided' },
@@ -53,9 +53,9 @@ export default function NavItemPage() {
       <h2 className="section-title">With icons</h2>
       <ComponentDemo code={iconsCode} preview={
         <div style={{ width: 220, display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <NavItem icon="📊" label="Analytics" active />
-          <NavItem icon="👥" label="Team" onClick={() => {}} />
-          <NavItem icon="⚙️" label="Settings" disabled />
+          <NavItem icon="house" label="Dashboard" active />
+          <NavItem icon="people-line" label="Team" onClick={() => {}} />
+          <NavItem icon="gear" label="Settings" disabled />
         </div>
       } />
 
@@ -70,8 +70,8 @@ export default function NavItemPage() {
           'Show the active state for the current location.',
         ]}
         donts={[
-          'Don’t use a button for navigation — pass href to render a link.',
-          'Don’t rely on an icon alone without a label.',
+          'Don\'t use a button for navigation — pass href to render a link.',
+          'Don\'t rely on an icon alone without a label.',
         ]}
       />
 
