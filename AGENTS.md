@@ -18,8 +18,7 @@ to get productive without spelunking.
 
 - Vite + React 18, `react-router-dom` **HashRouter**, deployed to **GitHub Pages** via
   `.github/workflows/deploy.yml` (push to `main` → build → deploy).
-- No TypeScript in the app (`.jsx`). Code Connect files are `.figma.tsx` and are **not** part
-  of the app build.
+- No TypeScript in the app — everything is `.jsx`.
 
 ## Layout
 
