@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import Button from '../components/ui/Button.jsx'
 
 export default function Home() {
   return (
@@ -11,10 +10,6 @@ export default function Home() {
           A complete library of components, tokens, and guidelines built to accelerate
           product development — with direct integration from Figma to code.
         </p>
-        <div className="home-hero-actions">
-          <Button onClick={() => {}}>Get started</Button>
-          <Button variant="ghost">View components</Button>
-        </div>
       </div>
 
       <div className="home-cards">
