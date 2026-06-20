@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Checkbox from '../../components/ui/Checkbox.jsx'
 
 const basicCode = `<Checkbox label="Accept terms and conditions" checked={checked} onChange={e => setChecked(e.target.checked)} />`
@@ -42,6 +43,23 @@ export default function CheckboxPage() {
           <Checkbox label="Disabled" disabled checked={false} onChange={() => {}} />
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Every checkbox needs a label; clicking the label toggles the box.',
+          'Space toggles the control; keep it focusable with a visible focus ring.',
+          'Use indeterminate to reflect a partially-selected “select all” parent — not as a third value.',
+          'Group a related set inside a fieldset with a legend.',
+        ]}
+        dos={[
+          'Use checkboxes for independent options where more than one can be selected.',
+          'Use indeterminate for a parent whose children are partially selected.',
+        ]}
+        donts={[
+          'Don’t use checkboxes for mutually exclusive choices — use Radio.',
+          'Don’t trigger an immediate action on toggle — use a Toggle or Button.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

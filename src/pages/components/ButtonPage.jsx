@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Button from '../../components/ui/Button.jsx'
 
 const primaryCode = `<Button variant="primary">Save changes</Button>`
@@ -68,6 +69,25 @@ export default function ButtonPage() {
             {loading ? 'Saving…' : 'Click to load'}
           </Button>
         </div>}
+      />
+
+      <Guidelines
+        accessibility={[
+          'Renders a real <button>, so Enter/Space activation and focus work natively — keep it that way.',
+          'Give icon-only buttons an aria-label; every button needs a discernible text label.',
+          'Keep the visible focus ring — never remove the outline on focus.',
+          'A disabled button isn’t focusable, so it can’t announce why it’s unavailable — explain the reason in nearby text.',
+        ]}
+        dos={[
+          'Use exactly one primary button per view for the main action.',
+          'Lead labels with a verb: “Save changes”, “Delete project”.',
+          'Use the destructive variant for irreversible actions.',
+        ]}
+        donts={[
+          'Don’t place two primary buttons in competition in the same view.',
+          'Don’t use a button for navigation — use a link.',
+          'Don’t disable the primary action without telling the user why.',
+        ]}
       />
 
       <h2 className="section-title">Props</h2>

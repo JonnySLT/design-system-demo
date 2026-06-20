@@ -1,5 +1,6 @@
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Tooltip from '../../components/ui/Tooltip.jsx'
 import Button from '../../components/ui/Button.jsx'
 
@@ -45,6 +46,22 @@ export default function TooltipPage() {
           <Tooltip content="To the right" placement="right"><Button size="sm" variant="secondary">Right</Button></Tooltip>
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Tooltips must appear on keyboard focus, not only hover (supported here).',
+          'Keep the text short and supplementary; never put essential or interactive content in a tooltip.',
+          'Don’t make a tooltip the only place important information lives — it’s hidden by default and unavailable on touch.',
+        ]}
+        dos={[
+          'Use for brief hints on an icon button or control.',
+          'Keep it to a short phrase.',
+        ]}
+        donts={[
+          'Don’t put links, buttons, or critical instructions in a tooltip.',
+          'Don’t use a tooltip where a visible label or helper text belongs.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

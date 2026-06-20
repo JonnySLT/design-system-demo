@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Input from '../../components/ui/Input.jsx'
 
 const basicCode = `<Input label="Email address" placeholder="you@example.com" />`
@@ -63,6 +64,25 @@ export default function InputPage() {
           <Input label="Full name" placeholder="Jane Smith" required />
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Always pass a visible label — never use placeholder text as the label (it disappears on focus and is unreliable for screen readers).',
+          'Convey errors with the error prop (icon + message), not color alone.',
+          'Mark required fields with the required prop and state it in text, not just the asterisk color.',
+          'Keep the focus ring visible on the field.',
+        ]}
+        dos={[
+          'Keep the label above the field and always visible.',
+          'Use helperText to set expectations before the user types.',
+          'Show errors with a message right next to the field.',
+        ]}
+        donts={[
+          'Don’t use placeholder text as the only label.',
+          'Don’t indicate an error with a red border and nothing else.',
+          'Don’t crowd multiple inputs onto one line on small screens.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />

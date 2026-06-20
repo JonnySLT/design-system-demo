@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ComponentDemo from '../../components/docs/ComponentDemo.jsx'
 import PropsTable from '../../components/docs/PropsTable.jsx'
+import Guidelines from '../../components/docs/Guidelines.jsx'
 import Modal from '../../components/ui/Modal.jsx'
 import Button from '../../components/ui/Button.jsx'
 
@@ -61,6 +62,23 @@ export default function ModalPage() {
           </Modal>
         </div>
       } />
+
+      <Guidelines
+        accessibility={[
+          'Move focus into the dialog on open and return it to the trigger on close.',
+          'Trap focus within the modal while open; Escape closes it (supported here).',
+          'The title gives the dialog its accessible name (role="dialog", aria-modal).',
+          'Render an opaque backdrop and prevent the background from scrolling.',
+        ]}
+        dos={[
+          'Use for focused, interrupting tasks that need a decision.',
+          'Keep content short and put the primary action in the footer.',
+        ]}
+        donts={[
+          'Don’t stack modals or use one for passive info — use a Toast or inline message.',
+          'Don’t put long forms or whole pages inside a modal.',
+        ]}
+      />
 
       <h2 className="section-title">Props</h2>
       <PropsTable rows={props} />
