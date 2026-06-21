@@ -48,6 +48,12 @@ export default function AvatarPage() {
         </div>}
       />
 
+      <h2 className="section-title">With image</h2>
+      <ComponentDemo
+        code={imageCode}
+        preview={<Avatar name="Alice Baker" src="https://i.pravatar.cc/80?img=1" />}
+      />
+
       <Guidelines
         accessibility={[
           'Pass the name prop so the avatar gets initials and an accessible label when the image is missing or fails.',

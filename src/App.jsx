@@ -1,11 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
-
-function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
-  return null
-}
 import Layout from './components/layout/Layout.jsx'
 import Home from './pages/Home.jsx'
 import Installation from './pages/GettingStarted.jsx'
@@ -33,6 +27,12 @@ import ToastPage from './pages/components/ToastPage.jsx'
 import NavItemPage from './pages/components/NavItemPage.jsx'
 import NavbarPage from './pages/components/NavbarPage.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
 
 export default function App() {
   return (

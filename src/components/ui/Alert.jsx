@@ -10,7 +10,7 @@ const icons = {
 export default function Alert({
   type = 'info',
   title,
-  description,
+  message,
   showIcon = true,
   dismissible = false,
   onDismiss,
@@ -20,7 +20,7 @@ export default function Alert({
       {showIcon && <span className="ds-alert-icon" aria-hidden="true">{icons[type]}</span>}
       <div className="ds-alert-content">
         {title && <div className="ds-alert-title">{title}</div>}
-        {description && <div className="ds-alert-description">{description}</div>}
+        {message && <div className="ds-alert-description">{message}</div>}
       </div>
       {dismissible && (
         <button className="ds-alert-dismiss" onClick={onDismiss} aria-label="Dismiss">
