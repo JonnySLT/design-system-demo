@@ -80,7 +80,7 @@
   transform: scale(1);
 }
 .radio-input:focus-visible ~ .radio-dot {
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  box-shadow: var(--shadow-focus);
 }
 
 .radio-text {

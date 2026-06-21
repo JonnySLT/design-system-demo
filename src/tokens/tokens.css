@@ -166,6 +166,8 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-focus:        0 0 0 3px rgba(79, 70, 229, 0.35);
+  --shadow-focus-subtle: 0 0 0 3px rgba(79, 70, 229, 0.12);
 
   /* --- Extra spacing -------------------------------- */
   --spacing-7xl: 80px;
@@ -192,6 +194,12 @@
   --color-interactive-primary-fg:     #1E1B4B;
 
   --color-text-on-primary:            #1E1B4B;
+
+  --color-surface-inverse:            #F1F5F9;
+  --color-text-on-inverse:            #0F172A;
+
+  --shadow-focus:        0 0 0 3px rgba(129, 140, 248, 0.4);
+  --shadow-focus-subtle: 0 0 0 3px rgba(129, 140, 248, 0.15);
 
   --color-success-bg:     #022C22;
   --color-success-border: #065F46;

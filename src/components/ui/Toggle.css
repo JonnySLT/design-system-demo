@@ -53,7 +53,7 @@
   background: var(--color-interactive-primary);
 }
 .toggle-input:focus-visible ~ .toggle-track {
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  box-shadow: var(--shadow-focus);
 }
 
 .toggle-text {

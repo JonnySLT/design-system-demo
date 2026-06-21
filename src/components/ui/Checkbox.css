@@ -46,7 +46,7 @@
 }
 
 .checkbox-input:focus-visible ~ .checkbox-box {
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  box-shadow: var(--shadow-focus);
 }
 
 .checkbox-text {
