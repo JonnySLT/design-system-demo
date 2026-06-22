@@ -20,14 +20,18 @@ to get productive without spelunking.
 ### Keeping the repo in sync with Figma (Figma-first workflow)
 
 Changes usually land in Figma first, then the repo must catch up. **Run `npm run check` to verify
-all three guards at once** (handy before a commit); `check:tokens` and `check:components` also run in
-CI and block deploy. The individual guards:
+all four guards at once** (handy before a commit); `check:tokens`, `check:components`, and
+`check:contrast` also run in CI and block deploy. The individual guards:
 
 - **`npm run check:tokens`** — verifies `tokens.css` ↔ `tokens.json` agree (runs in CI, blocks deploy).
 - **`npm run check:components`** — verifies `components.json`'s documented props match the actual
   component source signatures (runs in CI, blocks deploy). Stale documented props fail; undocumented
   pass-through props warn. An entry whose documented component is implemented by a differently-named
   internal one can set `"sourceSymbol"` to point the check at the right function (e.g. Toast → ToastItem).
+- **`npm run check:contrast`** — WCAG 2.1 AA contrast audit of the semantic colour pairings in both
+  light and dark (runs in CI, blocks deploy). Enforces 4.5:1 for text and 3.0:1 for essential UI
+  (icons, focus rings, input borders); non-essential container borders are reported as advisory
+  `note`s (1.4.11-exempt), and disabled text is exempt.
 - **`npm run check:figma-tokens`** — verifies the repo's tokens still match Figma in **both light and
   dark** modes (Figma is the source of truth for both). It compares against
   `scripts/figma-tokens.snapshot.json`, a committed snapshot of the mirrored Figma variables.
