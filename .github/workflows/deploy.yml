@@ -34,6 +34,9 @@ jobs:
       - name: Check components.json matches source
         run: npm run check:components
 
+      - name: Check colour contrast (WCAG AA)
+        run: npm run check:contrast
+
       - name: Build
         run: npm run build
         env:
