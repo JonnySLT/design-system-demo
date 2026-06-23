@@ -43,3 +43,23 @@ test.describe('demo visual regression', () => {
     });
   }
 });
+
+// Mobile viewport: protect the responsive top bar and the hamburger drawer.
+test.describe('demo mobile nav', () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test('demo-mobile-collapsed', async ({ page }) => {
+    await page.goto('/#/demo');
+    await page.waitForLoadState('networkidle');
+    await page.evaluate(() => document.fonts.ready);
+    await expect(page).toHaveScreenshot('demo-mobile-collapsed.png');
+  });
+
+  test('demo-mobile-drawer', async ({ page }) => {
+    await page.goto('/#/demo');
+    await page.waitForLoadState('networkidle');
+    await page.evaluate(() => document.fonts.ready);
+    await page.click('.demo-hamburger');
+    await expect(page).toHaveScreenshot('demo-mobile-drawer.png');
+  });
+});
