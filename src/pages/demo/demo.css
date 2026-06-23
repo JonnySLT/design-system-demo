@@ -289,3 +289,92 @@
   padding-top: 8px;
 }
 
+/* ───────────────────────────────────────────────
+   Responsive — tablet (≤768px): sidebar → top bar
+   Mirrors the Figma Layout page breakpoints.
+   ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .demo-shell {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  .demo-content {
+    overflow-y: visible;
+  }
+
+  /* Vertical sidebar becomes a horizontal, scrollable top bar */
+  .demo-shell .navbar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-default);
+    overflow-x: auto;
+  }
+  .demo-shell .navbar-divider,
+  .demo-shell .navbar-spacer,
+  .demo-shell .navbar-user,
+  .demo-shell .navbar-section-label {
+    display: none;
+  }
+  .demo-shell .navbar-logo {
+    flex-shrink: 0;
+  }
+  .demo-shell .navbar-sections {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+  .demo-shell .navbar-section {
+    flex-direction: row;
+    gap: 2px;
+  }
+  .demo-shell .nav-item {
+    white-space: nowrap;
+  }
+
+  /* 4 stat cards → 2 columns */
+  .demo-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ───────────────────────────────────────────────
+   Responsive — mobile (≤480px): single column, 16px margins
+   ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .demo-page,
+  .demo-settings-page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Stat cards → single column */
+  .demo-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Title + CTA stack */
+  .demo-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* First / last name stack */
+  .demo-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tighten card padding */
+  .demo-settings-card-header,
+  .demo-settings-card-body,
+  .demo-toggle-row,
+  .demo-checkbox-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
