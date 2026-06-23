@@ -29,7 +29,7 @@
   color: var(--color-interactive-primary-fg);
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--font-size-sm);
 }
 
 .navbar-brand {
@@ -91,7 +91,7 @@
   color: var(--color-interactive-primary);
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 12px;
+  font-size: var(--font-size-xs);
 }
 
 .navbar-user-info {
@@ -102,7 +102,7 @@
 
 .navbar-user-name {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--color-text-default);
   white-space: nowrap;
@@ -112,7 +112,7 @@
 
 .navbar-user-email {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   white-space: nowrap;
   overflow: hidden;

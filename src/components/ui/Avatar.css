@@ -32,10 +32,10 @@
   width: 32px;
   height: 32px;
 }
-.avatar--md .avatar__initials { font-size: 12px; }
+.avatar--md .avatar__initials { font-size: var(--font-size-xs); }
 
 .avatar--lg {
   width: 40px;
   height: 40px;
 }
-.avatar--lg .avatar__initials { font-size: 14px; }
+.avatar--lg .avatar__initials { font-size: var(--font-size-sm); }

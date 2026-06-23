@@ -8,7 +8,7 @@
 }
 
 .radio-group-label {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--color-text-default);
   font-family: var(--font-sans);
@@ -23,7 +23,7 @@
 }
 
 .radio-hint {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   margin-top: 4px;
 }
@@ -84,7 +84,7 @@
 }
 
 .radio-text {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-default);
   font-family: var(--font-sans);
 }

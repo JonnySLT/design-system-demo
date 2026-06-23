@@ -20,8 +20,8 @@ to get productive without spelunking.
 ### Keeping the repo in sync with Figma (Figma-first workflow)
 
 Changes usually land in Figma first, then the repo must catch up. **Run `npm run check` to verify
-all four guards at once** (handy before a commit); `check:tokens`, `check:components`, and
-`check:contrast` also run in CI and block deploy. The individual guards:
+all five guards at once** (handy before a commit); `check:tokens`, `check:components`,
+`check:contrast`, and `check:hardcoded` also run in CI and block deploy. The individual guards:
 
 - **`npm run check:tokens`** — verifies `tokens.css` ↔ `tokens.json` agree (runs in CI, blocks deploy).
 - **`npm run check:components`** — verifies `components.json`'s documented props match the actual
@@ -32,6 +32,9 @@ all four guards at once** (handy before a commit); `check:tokens`, `check:compon
   light and dark (runs in CI, blocks deploy). Enforces 4.5:1 for text and 3.0:1 for essential UI
   (icons, focus rings, input borders); non-essential container borders are reported as advisory
   `note`s (1.4.11-exempt), and disabled text is exempt.
+- **`npm run check:hardcoded`** — scans `src/components/**/*.css` for values that bypass the tokens
+  (runs in CI, blocks deploy). Hardcoded hex colours and on-scale `font-size` px **fail** (use the
+  `var(--…)` token); off-scale font-sizes and raw `rgba()` are advisory warnings.
 - **`npm run check:figma-tokens`** — verifies the repo's tokens still match Figma in **both light and
   dark** modes (Figma is the source of truth for both). It compares against
   `scripts/figma-tokens.snapshot.json`, a committed snapshot of the mirrored Figma variables.

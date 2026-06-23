@@ -50,13 +50,13 @@
 }
 
 .checkbox-text {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-default);
   font-family: var(--font-sans);
 }
 
 .checkbox-hint {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   padding-left: 24px;
 }

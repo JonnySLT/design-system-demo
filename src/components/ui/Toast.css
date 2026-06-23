@@ -18,7 +18,7 @@
   color: var(--color-text-on-inverse);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-family: var(--font-sans);
   min-width: 280px;
   max-width: 400px;

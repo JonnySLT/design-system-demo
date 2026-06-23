@@ -37,6 +37,9 @@ jobs:
       - name: Check colour contrast (WCAG AA)
         run: npm run check:contrast
 
+      - name: Check no hardcoded values in component CSS
+        run: npm run check:hardcoded
+
       - name: Build
         run: npm run build
         env:
