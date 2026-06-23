@@ -16,25 +16,34 @@ const ROLE_OPTIONS = [
   { value: 'engineering-lead', label: 'Engineering Lead' },
 ]
 
+const INITIAL_FORM = {
+  firstName: 'Sarah',
+  lastName: 'Chen',
+  email: 'sarah.chen@acmecorp.com',
+  role: 'product-designer',
+}
+const INITIAL_PREFS = {
+  emailNotifications: true,
+  pushNotifications: true,
+  marketingEmails: false,
+  comments: true,
+  assignments: true,
+  statusChanges: false,
+}
+
 export default function AccountSettings() {
   const { toasts, dismiss, toast } = useToast()
-  const [form, setForm] = useState({
-    firstName: 'Sarah',
-    lastName: 'Chen',
-    email: 'sarah.chen@acmecorp.com',
-    role: 'product-designer',
-  })
-  const [prefs, setPrefs] = useState({
-    emailNotifications: true,
-    pushNotifications: true,
-    marketingEmails: false,
-    comments: true,
-    assignments: true,
-    statusChanges: false,
-  })
+  const [form, setForm] = useState(INITIAL_FORM)
+  const [prefs, setPrefs] = useState(INITIAL_PREFS)
 
   function handleSave() {
     toast('Your changes have been saved successfully.', 'success')
+  }
+
+  function handleCancel() {
+    setForm(INITIAL_FORM)
+    setPrefs(INITIAL_PREFS)
+    toast('Changes discarded.', 'default')
   }
 
   return (
@@ -136,7 +145,7 @@ export default function AccountSettings() {
         </div>
 
         <div className="demo-actions-row">
-          <Button variant="secondary" size="md" onClick={() => {}}>Cancel</Button>
+          <Button variant="secondary" size="md" onClick={handleCancel}>Cancel</Button>
           <Button variant="primary" size="md" onClick={handleSave}>Save changes</Button>
         </div>
       </div>
