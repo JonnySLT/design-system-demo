@@ -5,7 +5,7 @@
 }
 
 .select-label {
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--color-text-default);
   font-family: var(--font-sans);
@@ -25,7 +25,7 @@
   padding: 0 40px 0 var(--spacing-lg);
   border: 1px solid var(--color-border-input);
   border-radius: var(--radius-md);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-family: var(--font-sans);
   color: var(--color-text-default);
   background: var(--color-bg-default);
@@ -51,7 +51,7 @@
 }
 .select-chevron svg { width: 16px; height: 16px; }
 
-.select-hint { font-size: 12px; color: var(--color-text-muted); }
+.select-hint { font-size: var(--font-size-xs); color: var(--color-text-muted); }
 
 .select-field--error .select-control { border-color: var(--color-error-border); }
 .select-field--error .select-hint { color: var(--color-error-text); }

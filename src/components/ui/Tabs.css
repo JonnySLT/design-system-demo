@@ -9,7 +9,7 @@
 
 .tabs-tab {
   padding: 10px var(--spacing-lg);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   font-family: var(--font-sans);
   color: var(--color-text-muted);
@@ -40,6 +40,6 @@
 .tabs-content {
   padding-top: var(--spacing-2xl);
   color: var(--color-text-default);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-family: var(--font-sans);
 }

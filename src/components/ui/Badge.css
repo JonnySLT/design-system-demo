@@ -10,7 +10,7 @@
 }
 
 .ds-badge--sm { font-size: 11px; padding: 1px 6px; }
-.ds-badge--md { font-size: 12px; padding: 2px 8px; }
+.ds-badge--md { font-size: var(--font-size-xs); padding: 2px 8px; }
 .ds-badge--lg { font-size: 13px; padding: 3px 10px; }
 
 .ds-badge--default {
