@@ -14,7 +14,7 @@ export default function Home() {
       </div>
 
       <div className="home-hero-actions">
-        <Link to="/demo" className="home-cta-primary">View live demo →</Link>
+        <a href="#/demo" target="_blank" rel="noopener noreferrer" className="home-cta-primary">View live demo →</a>
         <Link to="/getting-started/installation" className="home-cta-secondary">Get started</Link>
       </div>
 
