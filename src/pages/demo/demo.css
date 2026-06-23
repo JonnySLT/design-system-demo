@@ -289,8 +289,52 @@
   padding-top: 8px;
 }
 
+/* Top bar with hamburger — only shown at the tablet/mobile breakpoint */
+.demo-topbar {
+  display: none;
+}
+
+.demo-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-default);
+}
+
+.demo-topbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  background: var(--color-interactive-primary);
+  color: var(--color-interactive-primary-fg);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.demo-hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: var(--color-text-default);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+}
+
+.demo-nav-overlay {
+  display: none;
+}
+
 /* ───────────────────────────────────────────────
-   Responsive — tablet (≤768px): sidebar → top bar
+   Responsive — tablet/mobile (≤768px): sidebar → hamburger drawer
    Mirrors the Figma Layout page breakpoints.
    ─────────────────────────────────────────────── */
 @media (max-width: 768px) {
@@ -303,36 +347,42 @@
     overflow-y: visible;
   }
 
-  /* Vertical sidebar becomes a horizontal, scrollable top bar */
-  .demo-shell .navbar {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
+  /* Show the top bar */
+  .demo-topbar {
+    display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    border-right: none;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--color-bg-default);
     border-bottom: 1px solid var(--color-border-default);
-    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 90;
   }
-  .demo-shell .navbar-divider,
-  .demo-shell .navbar-spacer,
-  .demo-shell .navbar-user,
-  .demo-shell .navbar-section-label {
-    display: none;
+
+  /* Sidebar becomes an off-canvas drawer */
+  .demo-shell .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 110;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: var(--shadow-lg);
   }
-  .demo-shell .navbar-logo {
-    flex-shrink: 0;
+  .demo-shell--nav-open .navbar {
+    transform: translateX(0);
   }
-  .demo-shell .navbar-sections {
-    flex-direction: row;
-    gap: var(--spacing-md);
-  }
-  .demo-shell .navbar-section {
-    flex-direction: row;
-    gap: 2px;
-  }
-  .demo-shell .nav-item {
-    white-space: nowrap;
+
+  /* Dimmed overlay behind the open drawer */
+  .demo-shell--nav-open .demo-nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(15, 23, 42, 0.45);
   }
 
   /* 4 stat cards → 2 columns */
