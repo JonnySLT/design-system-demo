@@ -4,7 +4,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-xs);
 }
 
 .radio-group-label {
@@ -25,7 +25,7 @@
 .radio-hint {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
-  margin-top: 4px;
+  margin-top: var(--spacing-xs);
 }
 
 .radio-label {

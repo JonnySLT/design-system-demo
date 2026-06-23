@@ -1,7 +1,7 @@
 .checkbox-field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--spacing-xs);
 }
 
 .checkbox-label {
@@ -58,7 +58,7 @@
 .checkbox-hint {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
-  padding-left: 24px;
+  padding-left: var(--spacing-2xl);
 }
 
 .checkbox-field--disabled .checkbox-label {
