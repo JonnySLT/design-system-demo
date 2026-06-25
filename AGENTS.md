@@ -85,6 +85,20 @@ changes.
   `.github/workflows/deploy.yml` (push to `main` → build → deploy).
 - No TypeScript in the app — everything is `.jsx`.
 
+## Live demo
+
+The site doubles as a **client-facing product demo** — a realistic app built entirely from the design
+system, separate from the component docs:
+
+- **`/#/demo`** — Dashboard (stat cards + an activity card using the `Tabs` and `Badge` components).
+- **`/#/demo/settings`** — Account Settings (profile form with `Input`/`Select`, preferences with
+  `Toggle`/`Checkbox`, and a success `Toast` fired on save).
+- **Full-width, no docs sidebar** — `Layout` skips its chrome on `/demo` routes. Uses the `Navbar`
+  component, which collapses to a **hamburger drawer ≤768px**; the screens are responsive.
+- Reached via the **"View live demo"** CTA on the docs home (opens in a new tab). Code lives in
+  `src/pages/demo/`; visual-regression baselines cover both screens (desktop + mobile).
+- Live: **https://jonnyslt.github.io/design-system-demo/#/demo**
+
 ## Layout
 
 ```
