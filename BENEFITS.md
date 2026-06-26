@@ -37,15 +37,26 @@ surprises.
 
 ## 🤖 For AI assistants (and the whole team via them)
 
-- **AI can act accurately without hand-holding** — clear instruction files (`AGENTS.md`,
-  `CLAUDE.md`, `TOKENS.md`) plus machine-readable indexes (`components.json`, `tokens.json`,
-  `llms.txt`) let an AI understand the whole system in one read.
-- **Less back-and-forth** — because the rules and structure are written down, AI produces
-  correct changelog entries, token updates, and component edits the first time.
-- **Safe automation** — AI changes go through the same automated guards as everyone's, so
-  AI-assisted work can't quietly break the system.
-- **Faster routine work** — repetitive jobs (logging changes, checking for drift, syncing
-  tokens) are scripted, freeing people for design and product decisions.
+The same structure that keeps designers and developers in sync also makes the system **AI-ready**:
+intent is written down, addressable, and checkable rather than implied — so an AI can understand
+the whole system in one read and verify its own changes before they ship. Three things make that work:
+
+- **Discoverable — the whole system in a few files.** Structure is declared in machine-readable
+  manifests, so an AI loads the entire API and token set without spelunking through source:
+  `components.json` (every component's props, types, and Figma node ID), `tokens.json` + `llms.txt`
+  (tokens and an LLM index in standard formats), and `AGENTS.md` / `CLAUDE.md` / `TOKENS.md`
+  (the conventions written as instructions).
+- **Addressable — a direct Figma-to-code map.** Every component maps to its Figma node ID and every
+  Figma variable maps to its CSS token, so translating a design change is mechanical, not guesswork —
+  point an AI at a frame and it finds the code deterministically.
+- **Verifiable — AI can check its own work.** Every change runs the same automated guards as everyone
+  else's: five CI checks catch hardcoded values, stale tokens, and mismatched props; visual regression
+  and a Figma fingerprint catch drift in both directions; and the changelog is generated from a
+  reproducible baseline. AI-assisted work can't quietly break the system, and the AI gets a fast,
+  honest feedback loop.
+
+The payoff: repetitive jobs (logging changes, checking for drift, syncing tokens) are scripted and
+safe, freeing people for design and product decisions.
 
 ## ✅ The bottom line
 

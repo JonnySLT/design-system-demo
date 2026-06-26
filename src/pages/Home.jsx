@@ -108,6 +108,49 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="home-section">
+        <div className="home-section-label">Built for AI</div>
+        <h2 className="home-section-heading">AI-ready by design</h2>
+        <p className="home-section-subheading">
+          The same structure that keeps designers and developers in sync also lets AI assistants
+          work the system accurately — because intent is written down, addressable, and checkable
+          rather than implied. An AI can understand the whole system in one read, and verify its
+          own changes before they ship.
+        </p>
+        <div className="home-benefits">
+          <div className="home-benefit-card">
+            <div className="home-benefit-audience">Discoverable</div>
+            <h3>The whole system in a few files</h3>
+            <p>Structure is declared in machine-readable manifests, so an AI loads the entire API and token set without spelunking through source.</p>
+            <ul className="home-benefit-list">
+              <li><code>components.json</code> — every component's props, types, and Figma node ID</li>
+              <li><code>tokens.json</code> + <code>llms.txt</code> — tokens and an LLM index in standard formats</li>
+              <li><code>AGENTS.md</code> / <code>CLAUDE.md</code> / <code>TOKENS.md</code> — the rules written as instructions</li>
+            </ul>
+          </div>
+          <div className="home-benefit-card">
+            <div className="home-benefit-audience">Addressable</div>
+            <h3>A direct Figma-to-code map</h3>
+            <p>The relationship between design and code is explicit, so translating a design change is mechanical instead of guesswork.</p>
+            <ul className="home-benefit-list">
+              <li>Every component maps to its Figma node ID</li>
+              <li>Every Figma variable maps to its CSS token</li>
+              <li>Point an AI at a frame — it finds the code deterministically</li>
+            </ul>
+          </div>
+          <div className="home-benefit-card">
+            <div className="home-benefit-audience">Verifiable</div>
+            <h3>AI can check its own work</h3>
+            <p>Every change runs the same automated guards, so AI-assisted work can't quietly break the system — and the AI gets a fast, honest feedback loop.</p>
+            <ul className="home-benefit-list">
+              <li>Five CI checks catch hardcoded values, stale tokens, and mismatched props</li>
+              <li>Visual regression and a Figma fingerprint catch drift in both directions</li>
+              <li>The changelog is generated from a reproducible baseline, not by hand</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
