@@ -27,6 +27,7 @@ import ToastPage from './pages/components/ToastPage.jsx'
 import NavItemPage from './pages/components/NavItemPage.jsx'
 import NavbarPage from './pages/components/NavbarPage.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
+import Changelog from './pages/Changelog.jsx'
 import Dashboard from './pages/demo/Dashboard.jsx'
 import Projects from './pages/demo/Projects.jsx'
 import AccountSettings from './pages/demo/AccountSettings.jsx'
@@ -67,6 +68,7 @@ export default function App() {
         <Route path="/components/toast"    element={<ToastPage />} />
         <Route path="/components/navbar"   element={<NavbarPage />} />
         <Route path="/components/nav-item" element={<NavItemPage />} />
+        <Route path="/changelog" element={<Changelog />} />
         <Route path="/components/*" element={<ComingSoon title="Component" />} />
         <Route path="/demo" element={<Dashboard />} />
         <Route path="/demo/projects" element={<Projects />} />

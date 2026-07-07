@@ -39,6 +39,44 @@ So a person never has to write a changelog entry by hand, the file stores a **ba
 4. **Write automatically — no approval needed.** If there are changes, write the entry per the Changelog rules above: choose the category by what changed (`TOKENS` for variables, `COMPONENTS` for components/sets, etc.), add the author badge (`MANUAL` for human edits, `CLAUDE` for yours), and **no** `REPO PUSH` badge (that badge is only for repo pushes). If nothing changed, do nothing.
 5. **Refresh the baseline** — after writing, re-store the current fingerprint to `changelog/baseline` (and update `baselineMeta`) so the next check diffs from this point.
 
+### Keeping the live-site changelog in sync
+
+The docs site renders the changelog at **`/#/changelog`** from **`src/data/changelog.json`** (page: `src/pages/Changelog.jsx`). The Figma changelog is the **source of truth**; this JSON is a generated mirror — **do not hand-edit it.**
+
+**Whenever you add or edit a changelog entry in Figma, regenerate `src/data/changelog.json` in the same session and commit it** (alongside any repo push), so the design file and the site stay in sync. Regenerate by extracting every entry from the `Entries` frame (`762:40`) via `use_figma`, then writing the result to `src/data/changelog.json` as `{ source, note, entries: [...] }`, newest first. Each entry is:
+
+```jsonc
+{ "version": "v1.0.x", "date": "Month D, YYYY", "category": "FIXES",
+  "repoPush": true|false, "author": "CLAUDE"|"MANUAL"|null,
+  "sections": [ { "label": "FIXES", "bullets": ["…"] } ] }
+```
+
+Extraction shape (run in a `use_figma` call, may need 2–3 chunks to stay under the output size limit):
+
+```js
+const entries = await figma.getNodeByIdAsync("762:40");
+const firstText = n => ('findAll' in n) ? (n.findAll(x => x.type === 'TEXT')[0] || null) : null;
+const data = entries.children.filter(e => e.type === 'FRAME').map(e => {
+  const header = e.children.find(c => c.name === 'Header');
+  const ht = header.findAll(n => n.type === 'TEXT');
+  const version = (ht.find(t => /^v\d/.test(t.characters)) || {}).characters;
+  const date = ((ht.find(t => t.characters.trim().startsWith('—')) || {}).characters || '').replace(/^—\s*/, '').trim();
+  const catPill = header.children.find(c => c.name === 'Tag');
+  const category = catPill ? (firstText(catPill) || {}).characters : null;
+  const repoPush = !!header.children.find(c => /RepoPush/i.test(c.name));
+  const ap = header.children.find(c => { const t = firstText(c); return t && /^(CLAUDE|MANUAL)$/.test(t.characters); });
+  const author = ap ? firstText(ap).characters : null;
+  const sections = e.children.filter(c => /^Section\//.test(c.name)).map(sec => ({
+    label: sec.name.replace('Section/', ''),
+    bullets: sec.findAll(n => n.name === 'BulletRow').map(r => { const b = r.findAll(n => n.type === 'TEXT').find(t => t.characters !== '·'); return b ? b.characters : null; }).filter(Boolean),
+  }));
+  return { version, date, category, repoPush, author, sections };
+});
+return data; // write these (newest-first) into changelog.json → entries
+```
+
+Category → Badge variant mapping lives in `Changelog.jsx` (`CATEGORY_VARIANT`); `REPO PUSH` and author are custom pills. Adding a new category only needs a line there.
+
 ### Annotation component placement
 
 When placing `Annotation` instances next to a frame:

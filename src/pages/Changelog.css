@@ -1,0 +1,129 @@
+.changelog {
+  max-width: 820px;
+}
+
+.changelog-intro h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-text-default);
+  margin: 0 0 12px;
+}
+
+.changelog-intro p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0 0 8px;
+}
+
+.changelog-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.changelog-list {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+}
+
+.changelog-entry {
+  padding: 24px 0;
+  border-top: 1px solid var(--color-border-default);
+}
+
+.changelog-entry:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.changelog-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.changelog-version {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-default);
+}
+
+.changelog-date {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-right: 2px;
+}
+
+/* Pills that aren't semantic Badge variants (REPO PUSH accent, author) */
+.changelog-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: var(--radius-lg);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.changelog-pill--repo {
+  background: var(--color-interactive-primary);
+  color: var(--color-interactive-primary-fg);
+}
+
+.changelog-pill--author {
+  background: var(--color-text-default);
+  color: var(--color-bg-default);
+}
+
+.changelog-section + .changelog-section {
+  margin-top: 12px;
+}
+
+.changelog-section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  background: var(--color-surface-raised, var(--color-bg-subtle));
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  margin-bottom: 8px;
+}
+
+.changelog-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.changelog-bullets li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-default);
+}
+
+.changelog-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}

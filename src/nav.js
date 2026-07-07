@@ -5,6 +5,7 @@ export const navigation = [
       { label: 'Introduction',  path: '/' },
       { label: 'Installation',  path: '/getting-started/installation' },
       { label: 'Usage',         path: '/getting-started/usage' },
+      { label: 'Changelog',     path: '/changelog' },
     ],
   },
   {
