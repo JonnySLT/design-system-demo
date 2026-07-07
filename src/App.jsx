@@ -28,6 +28,7 @@ import NavItemPage from './pages/components/NavItemPage.jsx'
 import NavbarPage from './pages/components/NavbarPage.jsx'
 import ComingSoon from './pages/ComingSoon.jsx'
 import Dashboard from './pages/demo/Dashboard.jsx'
+import Projects from './pages/demo/Projects.jsx'
 import AccountSettings from './pages/demo/AccountSettings.jsx'
 
 function ScrollToTop() {
@@ -38,7 +39,7 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <Layout demoRoutes={['/demo', '/demo/settings']}>
+    <Layout demoRoutes={['/demo', '/demo/projects', '/demo/settings']}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -68,6 +69,7 @@ export default function App() {
         <Route path="/components/nav-item" element={<NavItemPage />} />
         <Route path="/components/*" element={<ComingSoon title="Component" />} />
         <Route path="/demo" element={<Dashboard />} />
+        <Route path="/demo/projects" element={<Projects />} />
         <Route path="/demo/settings" element={<AccountSettings />} />
       </Routes>
     </Layout>

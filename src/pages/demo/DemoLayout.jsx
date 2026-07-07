@@ -8,7 +8,7 @@ const NAV_SECTIONS = [
   {
     items: [
       { label: 'Dashboard', href: '#/demo' },
-      { label: 'Projects', badge: 4 },
+      { label: 'Projects', href: '#/demo/projects', badge: 4 },
       { label: 'Analytics' },
       { label: 'Messages', badge: 12 },
       { label: 'Files' },

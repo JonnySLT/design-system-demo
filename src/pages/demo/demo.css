@@ -428,3 +428,70 @@
   }
 }
 
+
+/* Projects table */
+.demo-card-meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.demo-table-wrap {
+  overflow-x: auto;
+}
+
+.demo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.demo-table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  padding: 0 16px 12px;
+  border-bottom: 1px solid var(--color-border-default);
+  white-space: nowrap;
+}
+
+.demo-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border-default);
+  vertical-align: middle;
+}
+
+.demo-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.demo-project-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.demo-project-name {
+  font-weight: 600;
+  color: var(--color-text-default);
+}
+
+.demo-project-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.demo-owner-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-default);
+  white-space: nowrap;
+}
+
+.demo-due {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
