@@ -9,7 +9,6 @@ const PROJECTS = [
   { name: 'Q4 Analytics Dashboard', desc: 'Executive reporting views', owner: 'Marcus Webb', status: 'In Review', variant: 'warning', due: 'Jul 5, 2026' },
   { name: 'Mobile App Launch', desc: 'iOS + Android release', owner: 'Priya Patel', status: 'On Track', variant: 'success', due: 'Aug 1, 2026' },
   { name: 'Billing Migration', desc: 'Move to new payments provider', owner: 'James Okafor', status: 'Blocked', variant: 'error', due: 'Jun 30, 2026' },
-  { name: 'Onboarding Flow', desc: 'New-user setup experience', owner: 'Sarah Chen', status: 'Done', variant: 'success', due: 'Jun 20, 2026' },
 ]
 
 export default function Projects() {
