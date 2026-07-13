@@ -17,7 +17,7 @@ After **any session** that either makes a change to this Figma file **or** pushe
 - **Auto-layout & spacing** — all frames must use auto-layout with `layoutSizingHorizontal = FILL` and `layoutSizingVertical = HUG`. For sections: set `itemSpacing` to 8px and bind it to `spacing/2` (`VariableID:7:3`) so bullet gaps are consistent and token-bound. Bullet body text nodes set to `FILL`.
 - **Header layer sizing** — every `Header` child (`Version` text, `Date` text, category `Tag` pill, `REPO PUSH` pill, author pill) is `layoutSizingHorizontal = HUG` so they all left-align with even `itemSpacing` gaps. **Never set the `Date` layer to `FILL`** (it would push the pills to the right edge and break consistency with every other entry).
 - **Section LabelPill — only with multiple sections** — a single-section entry **omits** the section `LabelPill` (its bullets follow the `Header` directly): the header category Tag already names the category, so a LabelPill would just duplicate it. Include a `LabelPill` per section **only** when the entry has 2+ category sections, so the sections are distinguishable.
-- **LabelPill is full-width** — when present, the section `LabelPill` MUST be `layoutSizingHorizontal = FILL` so the grey bar stretches the full content width (label text stays left-aligned). Never set it to `HUG`.
+- **LabelPill always hugs its content** — when present, the section `LabelPill` MUST be `layoutSizingHorizontal = HUG` so it renders as a small pill matching the header category `Tag`, consistent with every existing entry. Never set it to `FILL`.
 - **Style cloning** — clone text styles, fills, and padding from the most recent existing entry — never hardcode values
 
 ### What to log
